@@ -1,0 +1,6 @@
+[
+  {
+    "context": ["/svg", "/contact"],
+    "target": "http://localhost:3000"
+  }
+]

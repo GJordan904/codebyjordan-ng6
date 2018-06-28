@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import './scss/variables';
+@import "./scss/mixins";
+@import "./scss/reboot";
+@import "./scss/bootstrap-utils";
+@import './scss/material-theme';
+@import './scss/material-icons';
+@import './scss/buttons';
+@import './scss/cards';

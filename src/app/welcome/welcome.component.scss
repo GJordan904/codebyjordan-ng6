@@ -1,0 +1,135 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.front-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: url("/assets/images/bgs/welcome_code.jpg") center center no-repeat;
+  background-size: cover;
+  color: map-get($dk-foreground-palette, base);
+  min-height: 100vh;
+  width: 100%;
+  padding: 48px 24px;
+
+  .mat-progress-bar {
+    height: 2px;
+  }
+
+  .intro-group {
+    margin-bottom: 28px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 48px;
+      color: $primary;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+    }
+  }
+
+  //
+  // Accordion
+  //
+  .accordion-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .mat-accordion {
+      width: 100%;
+
+      .mat-expansion-panel {
+        position: relative;
+        background: transparent;
+        @include mat-elevation(0, $black);
+
+        &.active {
+          border-color: $white;
+          .mat-expansion-panel-header {
+            .mat-expansion-panel-header-title {
+              color: $white;
+            }
+          }
+        }
+
+        &:last-child {
+          border: none;
+        }
+
+        .mat-expansion-panel-header {
+
+          &:hover {
+            background: transparent;
+          }
+          .mat-expansion-panel-header-title {
+            display: flex;
+            align-items: center;
+            color: $light-disabled-text;
+
+            h3 {
+              font-size: 26px;
+              margin: 0 22px;
+            }
+          }
+        }
+
+        .panel-content {
+          padding: 0 48px 16px 42px;
+
+          button {
+            font-size: 13px;
+            padding: 0 6px;
+          }
+        }
+
+        .button-row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+
+          .button-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+              display: inline-flex;
+              font-size: 10px;
+            }
+
+            .mat-icon-button .mat-icon {
+              line-height: 36px;
+              font-size: 32px;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+      }
+    }
+
+    .form-card {
+      width: 100%;
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+}
+

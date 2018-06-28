@@ -1,0 +1,186 @@
+<div class="home-header"></div>
+
+<div class="bio-content">
+  <mat-card>
+    <div class="profile-card">
+      <mat-grid-list [cols]="12" rowHeight="fit">
+        <mat-grid-tile [colspan]="infoSpan" [rowspan]="1">
+
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="imgSpan" [rowspan]="1">
+
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-card>
+</div>
+
+<!--
+  <div ModelClass="profile-card bg-plight">
+    <div ModelClass="body">
+      <div ModelClass="info">
+        <h1>
+          Grant Jordan
+          <span ModelClass="sub">Full Stack Developer</span>
+        </h1>
+        <ul ModelClass="contact-list">
+          <li ModelClass="website">codebyjordan.com</li>
+          <li ModelClass="email">grant@codebyjordan.com</li>
+          <li ModelClass="phone">904-460-4346</li>
+          <li ModelClass="address">Cornelius, NC</li>
+        </ul>
+        <div ModelClass="social-icons">
+          <a ModelClass="icon" href="https://github.com/gjordan904" target="_blank">
+            <img src="/assets/images/social/github-sm.png">
+          </a>
+          <a ModelClass="icon" href="https://linkedin.com/in/code-by-jordan" target="_blank">
+            <img src="/assets/images/social/linkedin-sm.png">
+          </a>
+        </div>
+      </div>
+      <div ModelClass="image">
+        <div ModelClass="slant"></div>
+        <img src="/assets/images/grant-jordan-profile-img.jpg" ModelClass="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div ModelClass="card">
+    <div ModelClass="card-body p-5">
+      <p>
+        <span ModelClass="lead">My name is Grant and I'm a full-stack developer that loves learning new technology!</span>
+      </p>
+      <p>
+        I have just moved from St. Augustine, FL to Charlotte, NC and I am actively seeking work.
+      </p>
+      <p>
+        I have worked the last year as a web developer and SEO/SEM specialist for Drive Group LLC and I have spent the
+        last 3 years learning programming.
+      </p>
+      <p>
+        During my time at Drive Group, I worked with Laravel, Wordpress, and Google AdWords.
+        While outside of work, I really enjoy working with Angular 2, Webpack, and other modern JavaScript technologies.
+      </p>
+    </div>
+    <div ModelClass="card-footer p-4 bg-pLight">
+      <div ModelClass="row justify-content-center">
+
+
+        <cbj-button [raised]="true" (click)="downloadCV()" [btnClasses]="['btn-secondary', 'mr-2']">Download Resume</cbj-button>
+        <cbj-button [raised]="true" [btnClasses]="['btn-secondary', 'mr-2']">Contact Me</cbj-button>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div ModelClass="centered-header">
+    <div ModelClass="icon-btn">
+      <i ModelClass="material-icons">timeline</i>
+    </div>
+    <h1>Skills</h1>
+  </div>
+  <div ModelClass="row align-items-center">
+    <div ModelClass="col-md-6">
+      <div ModelClass="card bg-secondary text-white">
+        <div ModelClass="card-header">Languages</div>
+        <div ModelClass="card-body">
+          <div *ngFor="let lang of languages" ModelClass="d-flex flex-column mt-3">
+            <div ModelClass="row justify-content-between">
+              <div ModelClass="col">{{lang.name}}</div>
+            </div>
+            <div ModelClass="progress">
+              <div ModelClass="progress-bar"
+                   role="progressbar"
+                   [ngStyle]="{'width': lang.level+'%' }"
+                   aria-valuemin="0" aria-valuemax="100"
+              >
+                {{lang.level/100 | percent}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ModelClass="col-md-6">
+      <div ModelClass="card">
+        <div ModelClass="card-header">Frameworks, Libraries & CMS</div>
+        <div ModelClass="card-body">
+          <div *ngFor="let frame of frameworks" ModelClass="d-flex flex-column mt-3">
+            <div ModelClass="row justify-content-between">
+              <div ModelClass="col">{{frame.name}}</div>
+            </div>
+            <div ModelClass="progress">
+              <div ModelClass="progress-bar"
+                   role="progressbar"
+                   [ngStyle]="{'width': frame.level+'%' }"
+                   aria-valuemin="0" aria-valuemax="100"
+              >
+                {{frame.level/100 | percent}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ModelClass="col-md-12">
+      <div ModelClass="card bg-primary text-white mt-0">
+        <div ModelClass="card-header">Tools</div>
+        <div ModelClass="card-body">
+          <div ModelClass="row">
+            <div ModelClass="col">
+              <div *ngFor="let tool of toolsLeft" ModelClass="d-flex flex-column mt-3">
+                <div ModelClass="row justify-content-between">
+                  <div ModelClass="col">{{tool.name}}</div>
+                </div>
+                <div ModelClass="progress">
+                  <div ModelClass="progress-bar bg-success"
+                       role="progressbar"
+                       [ngStyle]="{'width': tool.level+'%' }"
+                       aria-valuemin="0" aria-valuemax="100"
+                  >
+                    {{tool.level/100 | percent}}</div>
+                </div>
+              </div>
+            </div>
+            <div ModelClass="col">
+              <div *ngFor="let tool of toolsRight" ModelClass="d-flex flex-column mt-3">
+                <div ModelClass="row justify-content-between">
+                  <div ModelClass="col">{{tool.name}}</div>
+                </div>
+                <div ModelClass="progress">
+                  <div ModelClass="progress-bar bg-success"
+                       role="progressbar"
+                       [ngStyle]="{'width': tool.level+'%' }"
+                       aria-valuemin="0" aria-valuemax="100"
+                  >
+                    {{tool.level/100 | percent}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ModelClass="centered-header">
+    <div ModelClass="icon-btn">
+      <i ModelClass="material-icons">code</i>
+    </div>
+    <h1>Code</h1>
+  </div>
+
+
+  <cbj-filter-gallery [url]="apiUrl + '/front/projects'"
+                      [params]="params"
+                      paramKey="lang"
+                      [filters]="filters"
+                      fTitle="Languages"
+                      width="100%"
+                      height="750px"
+                      [colWidth]=".25"
+                      [gutterWidth]="25">
+  </cbj-filter-gallery>
+
+
+</div>
+-->

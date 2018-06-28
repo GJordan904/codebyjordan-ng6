@@ -1,0 +1,141 @@
+<div class="front-page">
+
+  <div class="intro-group">
+    <h1 [@xSlideFade]="true">Hi, I'm Grant!</h1>
+    <h2 [@xSlideFade-st]="true">
+      A well rounded, Full Stack Developer located in Cornelius, NC. I love taking on challenges, learning new
+      technology, and finding the best way to solve a problem. Let's work together on your next tech project.
+    </h2>
+
+    <button [@fade]="true" class="my-2" mat-button color="primary">More About Me</button>
+  </div>
+
+  <div class="accordion-group">
+    <mat-accordion displayMode="flat" [hideToggle]="true" [@ySlideFade]="true">
+
+      <mat-expansion-panel [ngClass]="{ 'active': panelActive(0) }"
+                           [hideToggle]="true"
+                           [expanded]="panelActive(0)">
+
+        <mat-expansion-panel-header collapsedHeight="72px"
+                                    expandedHeight="84px"
+                                    (click)="nxtPanel(0)">
+          <mat-panel-title>
+            <mat-icon [svgIcon]="panelActive(0) ? 'dev:angular-plain' : 'dev:angularjs-grey'"></mat-icon>
+            <h3>Front End</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="panel-content mb-4">
+          <p class="mb-4">
+            I bring a design to life by developing interactive, fully responsive, and animated interfaces. Utilizing modern techniques
+            that focus on speed, performance, and reliability.
+          </p>
+
+          <button class="my-2" mat-stroked-button color="primary">Code Samples</button>
+        </div>
+
+        <mat-progress-bar color="primary" mode="determinate" [value]="panels[0].progress"></mat-progress-bar>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [ngClass]="{ 'active': panelActive(1) }"
+                           [hideToggle]="true"
+                           [expanded]="panelActive(1)">
+
+        <mat-expansion-panel-header collapsedHeight="72px"
+                                    expandedHeight="72px"
+                                    (click)="nxtPanel(1)">
+          <mat-panel-title>
+            <mat-icon [svgIcon]="panelActive(1) ? 'dev:linux-original' : 'dev:linux-plain'"></mat-icon>
+            <h3>Back End</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="panel-content">
+          <p>
+            I have experience with both Node and PHP and can competently manage both Apache or Nginx servers. I am very
+            fond of and familiar with AWS and enjoy designing AWS solutions.
+          </p>
+
+          <button class="my-2" mat-stroked-button color="primary">My Mock API</button>
+        </div>
+
+        <mat-progress-bar color="primary" mode="determinate" [value]="panels[1].progress"></mat-progress-bar>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [ngClass]="{ 'active': panelActive(2), 'mat-elevation-z0': true }"
+                           [hideToggle]="true"
+                           [expanded]="panelActive(2)">
+
+        <mat-expansion-panel-header collapsedHeight="72px"
+                                    expandedHeight="72px"
+                                    (click)="nxtPanel(2)">
+          <mat-panel-title>
+            <mat-icon [svgIcon]="panelActive(2) ? 'dev:google-original' : 'dev:google-grey'"></mat-icon>
+            <h3>SEO & More</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="panel-content">
+          <p>
+            I am Google Adwords certified in multiple areas and have a strong understanding of good SEO
+            practices. I have helped manage successful PPC campaigns for businesses in a variety of sectors.
+          </p>
+          <p>
+            I love tech and stay on top of the latest trends and news. I am one of those guys people call for help with their
+            computer or home network. So if you have a tech issue at your home or business, I can probably help.
+          </p>
+        </div>
+
+        <div class="button-row">
+
+          <div class="button-item">
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Desktop Icon" svgIcon="md:desktop_windows"></mat-icon>
+            </button>
+            <h4>Adwords Display</h4>
+          </div>
+
+          <div class="button-item">
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Mobile phone icon" svgIcon="md:phone_android"></mat-icon>
+            </button>
+            <h4>Adwords Mobile</h4>
+          </div>
+
+          <div class="button-item">
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Search icon" svgIcon="md:search"></mat-icon>
+            </button>
+            <h4>Adwords Search</h4>
+          </div>
+
+          <div class="button-item">
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Video icon" svgIcon="md:ondemand_video"></mat-icon>
+            </button>
+            <h4>Adwords Video</h4>
+          </div>
+
+          <div class="button-item">
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Mobile friendly icon" svgIcon="md:developer_mode"></mat-icon>
+            </button>
+            <h4>Mobile Sites</h4>
+          </div>
+
+        </div>
+
+        <mat-progress-bar color="primary" mode="determinate" [value]="panels[2].progress"></mat-progress-bar>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <cbj-contact-form class="form-card" [@xSlideFade-card]="true"></cbj-contact-form>
+
+  </div>
+
+</div>

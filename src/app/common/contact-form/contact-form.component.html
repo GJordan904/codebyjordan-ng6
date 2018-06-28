@@ -1,0 +1,70 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title><h3>Let's Get Started!</h3></mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ng-container *ngIf="!submitted; else elseSubmitted">
+      <mat-vertical-stepper linear>
+        <ng-template matStepperIcon="edit">
+          <mat-icon svgIcon="md:done"></mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="done">
+          <mat-icon svgIcon="md:done"></mat-icon>
+        </ng-template>
+
+        <mat-step label="What kind of services do you need?" [stepControl]="serviceGroup">
+          <form class="form" [formGroup]="serviceGroup">
+
+            <mat-form-field class="d-block">
+              <mat-select placeholder="Services" formControlName="service" multiple>
+                <mat-option *ngFor="let s of services" [value]="s.value">
+                  {{s.label}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </form>
+          <button color="primary" mat-button matStepperNext>Next</button>
+        </mat-step>
+
+        <mat-step label="What is your name?" [stepControl]="nameGroup">
+          <form class="form" [formGroup]="nameGroup">
+            <mat-form-field class="d-block">
+              <input matInput placeholder="My name is.." formControlName="name">
+            </mat-form-field>
+          </form>
+          <button color="accent" mat-button matStepperPrevious>Back</button>
+          <button color="primary" mat-button matStepperNext>Next</button>
+        </mat-step>
+
+        <mat-step label="How would you like me to contact you?" [stepControl]="contactGroup">
+          <form class="form" [formGroup]="contactGroup">
+
+            <mat-form-field class="d-block">
+              <mat-select placeholder="Method" formControlName="type">
+                <mat-option *ngFor="let m of methods" [value]="m.value">
+                  {{m.label}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="d-block">
+              <input matInput placeholder="Address or Number" formControlName="value">
+            </mat-form-field>
+
+          </form>
+          <button color="accent" mat-button matStepperPrevious>Back</button>
+          <button color="primary" mat-button (click)="submitForm()">Submit</button>
+        </mat-step>
+
+      </mat-vertical-stepper>
+    </ng-container>
+
+    <ng-template #elseSubmitted>
+      <mat-icon svgIcon="md:check"></mat-icon>
+    </ng-template>
+  </mat-card-content>
+
+</mat-card>
